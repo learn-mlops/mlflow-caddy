@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mlflow:
+    build: .
+    volumes:
+      - ./data/mlflow:/data/mlflow
+  caddy:
+    image: caddy:2.6.2-alpine
+    restart: unless-stopped
+    environment:
+      - XDG_DATA_HOME=/data/
+      - XDG_CONFIG_HOME=/config/
+    depends_on:
+      - mlflow
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    volumes:
+      - ./config/Caddyfile:/etc/caddy/Caddyfile
+      - ./config/caddy/:/config/caddy
+      - ./data/caddy/:/data/data
+      
