@@ -8,14 +8,16 @@ Caddyfile should exist in `config/Caddyfile`.
 
 Example:
 
-```
-{domain_name}
-
-reverse_proxy mlflow:5000
-
-basicauth / {
-	{username} {password}
+```Caddyfile
+__public_domain_name__ {
+  reverse_proxy mlflow:5000
+  encode zstd gzip
+  basicauth / {
+    __username1__ __password1__
+    __username2__ __password2__
+  }
 }
+
 ```
 
 The password can be created by 
