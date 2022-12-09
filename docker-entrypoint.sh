@@ -8,9 +8,10 @@ LISTENING_PORT=${LISTENING_PORT:-5000}
 
 if [ $# -eq 0 ]; then
   mkdir -p $ARTIFACTS_DESTINATION
-  mlflow server --host 0.0.0.0 --port ${LISTENING_PORT} \
-    --serve-artifacts --artifacts-destination $ARTIFACTS_DESTINATION \
-    --backend-store-uri ${BACKEND_STORE_URI}
+  mlflow server \
+    --artifacts-destination $ARTIFACTS_DESTINATION \
+    --backend-store-uri ${BACKEND_STORE_URI} \
+    --host 0.0.0.0 --port ${LISTENING_PORT} \
 else
   eval "$@"
 fi
