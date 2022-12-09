@@ -2,6 +2,7 @@ version: '3'
 services:
   mlflow:
     build: .
+    restart: unless-stopped
     volumes:
       - ./data/mlflow:/data
   caddy:
