@@ -2,7 +2,7 @@
 
 # Caddyfile
 
-Caddyfile should exist in `config/Caddyfile`.
+Caddyfile should exist in `config/caddy/Caddyfile`.
 
 ## Caddyfile with Automatic HTTPS
 
