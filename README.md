@@ -1,10 +1,10 @@
-# mlflow-starter
+# mlflow-caddy
 
-# Caddyfile
+## Caddyfile
 
 Caddyfile should exist in `config/caddy/Caddyfile`.
 
-## Caddyfile with Automatic HTTPS
+### Caddyfile with Automatic HTTPS
 
 Example:
 
